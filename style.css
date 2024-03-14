@@ -98,7 +98,7 @@ nav ul li a{
 .genericButton:hover {
   background-color: #494949}
 
-.header-container h3 {
+h3 {
   font-size: 4em;
   text-align: center;
   margin-top: 0;
@@ -125,16 +125,20 @@ nav ul li a{
 }
 
 
-.fanart-gallery {
+.fan-art-gallery {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   padding: 20px;
 }
 
+.left-gallery, #ff-compose, .right-gallery {
+  flex: 1;
+}
+
 .left-gallery, .right-gallery {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 20px;
 }
 
@@ -143,16 +147,10 @@ nav ul li a{
   text-align: center;
 }
 
-.left-gallery img, .right-gallery img {
-  width: 100%;
-  height: auto;
-}
-
 
 .left-gallery figure img,
 .right-gallery figure img {
-    width: auto; /* Adjust the width */
-    height: auto; /* Adjust the height */
+    width: 100%; /* Adjust the width */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
     margin-bottom: 0.5rem;
@@ -219,3 +217,8 @@ nav ul li a{
     margin-top: 10px; /* Space above the button */
 }
 
+/* Quiz dropdown selections */
+
+select option {
+  color: #000;
+}
