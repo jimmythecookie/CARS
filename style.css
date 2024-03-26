@@ -22,6 +22,8 @@ background-repeat: no-repeat;
 background-size: cover;
 background-attachment: fixed;
 padding: 0 8%;
+position: relative;
+z-index: 1;
 }
 
 /* PROF NOTE: From https://stackoverflow.com/a/77746563 */
@@ -57,6 +59,7 @@ background-attachment: fixed;
 color: #ffb;
 }
 
+
 nav{
   display: flex;
   align-items: center;
@@ -64,7 +67,17 @@ nav{
   padding: 20px 0;
 }
 .logo{
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* transition for transform and shadow */
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.5); /* box-shadow not sure if this works but experimented and it looks like it works */
+  border-radius: 10px; 
+  display: inline-block; 
+  margin: 10px;
   width: 160px;
+
+}
+nav a:hover .logo {
+  transform: scale(1.05); /* Slightly enlarges the logo on hover */
+  box-shadow: 0 0 20px rgba(0,0,0,0.75); /* More pronounced shadow on hover */
 }
 nav ul li{
   display: inline-block;
@@ -72,10 +85,21 @@ nav ul li{
   margin: 10px 100px;
 }
 nav ul li a{
-  color: #F4A460;
+ transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth move to transform and shadow */
+  box-shadow: 3px 3px 8px rgba(0,0,0,0.3); /* Subtle shadow for a raised effect */
+  border-radius: 5px;
+  display: inline-block; /* more space and padding in my opinion */
+  margin: 5px;
+  padding: 10px 15px; /* Padding inside links for larger click areas */
+  background: rgba(255,255,255,0.8); /* think this would make it more readable */
+  color: #000;
   text-decoration: none;
 }
-
+nav ul li a:hover {
+  transform: scale(1.10); /* Slightly enlarges the links on hover */
+  box-shadow: 0 0 15px rgba(0,0,0,0.5); /* experimented and I think this is the best so far */
+  background: rgba(255,255,255,1); /* inspired by other websites that use similar methods */
+}
 .carshome h1{
   font-size: 70px;
   margin-top: 15%;
@@ -107,20 +131,20 @@ h3 {
 
 .funfactlist {
     background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-    padding: 70px; /* Padding inside the box */
-    border-radius: 10px; /* Rounded corners of the box */
-    margin: 0 auto; /* Center the box */
-    width: fit-content; /* Adjust width to fit the content */
-    max-width: 90%; /* Maximum width, can be adjusted */
-    position: relative; /* Keeps it in the document flow */
-    z-index: 2; /* Ensures it's above the background image */
+    padding: 70px;
+    border-radius: 10px;
+    margin: 0 auto; 
+    width: fit-content;
+    max-width: 90%; /
+    position: relative; 
+    z-index: 2; 
 }
 
 
 .funfactlist li {
   margin-bottom: 10px;
   text-align: left;
-  color: #ff9900;
+  color: #115;
   font-size: 280%;
 }
 
@@ -154,13 +178,15 @@ h3 {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
     margin-bottom: 0.5rem;
+    border-radius: 140px;
+
 }
 
 /* Style for hovering over the images */
 .left-gallery figure img:hover,
 .right-gallery figure img:hover {
-    transform: translateY(-5px); /* Slightly raising the image */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Enhance shadow */
+    transform: translateY(-10px); /* Slightly raising the image */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.9); /* Enhance shadow */
 }
 
 /* caption */
@@ -221,4 +247,21 @@ h3 {
 
 select option {
   color: #000;
+}
+
+.video-container {
+ margin-top: 20px;
+ text-align: center;
+}
+.video-description {
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.mainContentSection {
+  position: relative;
+  z-index: 2;
+  background: #000;
+  margin-top: 50vh;
+  padding: 400px 280px;
 }
